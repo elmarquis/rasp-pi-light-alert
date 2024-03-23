@@ -42,6 +42,9 @@ def logMessage(message):
         now = datetime.datetime.now()
         timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
         print(timestamp+" "+message)
+        # write to log file
+        with open("/home/pi/light_alert.log", "a") as log:
+                log.write(timestamp+" "+message+"\n")
 
 
 while True:
